@@ -13,8 +13,12 @@ import com.resources.springdatarestmusic.repository.InstrumentRepository;
 @Component
 public class DatabaseLoader implements CommandLineRunner {
 
+    private final InstrumentRepository repository;
+
     @Autowired
-    private InstrumentRepository repository;
+    public DatabaseLoader(InstrumentRepository repository) {
+        this.repository = repository;
+    }
 
     @Override
     public void run(String... args) throws Exception {
